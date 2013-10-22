@@ -36,6 +36,6 @@ rm "$OUTFOLDER"_unsorted.bam
 samtools view -h "$OUTFOLDER"_names.bam | awk -F "\t" 'BEGIN {OFS="\t"}{gsub("/[12]", "", $1); print $0}' | samtools view -Sb - > "$OUTFOLDER".bam
 rm "$OUTFOLDER"_names.bam
 
-rm -rf "$OUTFOLDOR"
+rm -rf "$OUTFOLDER"
 
 echo `date`" - Completed alignment of chunk no ""$SGE_TASK_ID" >> ../"$1".alignment.log
